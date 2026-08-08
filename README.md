@@ -184,3 +184,165 @@ Default inbound policy: DENY
 Default outbound policy: ALLOW
 HTTP: TCP/80
 SSH: TCP/22
+
+# Evidence and Screenshots
+
+The following screenshots provide visual evidence of the implementation, testing, troubleshooting, and validation performed throughout the project.
+
+All screenshots are stored in the [`screenshots/`](./screenshots/) directory.
+
+---
+
+## Phase 1 — Infrastructure and Server Configuration
+
+### APP01 Server
+
+![APP01 Server](./screenshots/app01-server.png)
+
+### FILE01 Server
+
+![FILE01 Server](./screenshots/file01-server.png)
+
+### MGMT01 Server
+
+![MGMT01 Server](./screenshots/mgmt01-server.png)
+
+### APP01 System Information
+
+![APP01 System Information](./screenshots/app01-system-info.png)
+
+### FILE01 System Information
+
+![FILE01 System Information](./screenshots/file01-system-info.png)
+
+### MGMT01 System Information
+
+![MGMT01 System Information](./screenshots/mgmt01-system-info.png)
+
+### Hostname and System Information
+
+![Hostname System Information](./screenshots/hostname-system-info.png)
+
+---
+
+## Phase 2 — Linux System Administration
+
+### User Accounts
+
+![FILE01 User Accounts](./screenshots/file01-user-accounts.png)
+
+### Group Membership
+
+![FILE01 Group Membership](./screenshots/file01-group-membership.png)
+
+### Departmental Roles
+
+![Departmental Roles](./screenshots/departmental-roles-assigned.png)
+
+### SSH Service
+
+![SSH Service](./screenshots/file01-ssh-service.png)
+
+### System Services
+
+![System Services](./screenshots/file01-system-services.png)
+
+### Group Verification
+
+![Group Verification](./screenshots/file01-group-verification.png)
+
+### Administrative Account
+
+![Administrative Account](./screenshots/file01-sysadmin-account.png)
+
+---
+
+## Phase 3 — File Permissions and Access Control
+
+### Departmental Folders
+
+![Departmental Folders](./screenshots/departmental-folders-created.png)
+
+### Permission Denied Test
+
+![Permission Denied](./screenshots/file-permission-denied.png)
+
+### Permission Analysis with namei
+
+![namei Permission Analysis](./screenshots/namei-permission-analysis.png)
+
+### Access Control Test
+
+![File Access Test](./screenshots/file-access-test.png)
+
+---
+
+## Phase 4 — Security and Service Management
+
+### UFW Firewall
+
+![APP01 UFW Firewall](./screenshots/app01-ufw-firewall.png)
+
+### Apache Service
+
+![Apache Service](./screenshots/app01-apache-service.png)
+
+### Apache Web Portal
+
+![APP01 Web Portal](./screenshots/app01-web-portal.png)
+
+### APP01 System Services
+
+![APP01 System Services](./screenshots/app01-system-services.png)
+
+---
+
+## Phase 5 — Enterprise Storage Administration
+
+### Disk Partitioning
+
+![FILE01 Disk Partitioning](./screenshots/file01-disk-partitioning.png)
+
+### Data Disk Mount
+
+![FILE01 Data Disk Mounted](./screenshots/file01-data-disk-mounted.png)
+
+### Persistent Storage Test
+
+![FILE01 Data Storage Test](./screenshots/file01-data-storage-test.png)
+
+---
+
+## Phase 6 — Monitoring and Troubleshooting
+
+### Memory Baseline
+
+![FILE01 Memory Baseline](./screenshots/file01-memory-baseline.png)
+
+### CPU Monitoring
+
+![FILE01 CPU Monitoring](./screenshots/file01-cpu-monitoring.png)
+
+### Memory Validation
+
+![FILE01 Memory Check](./screenshots/file01-memory-check.png)
+
+---
+
+## Network Diagnostics
+
+### Network Interfaces
+
+![Network Interfaces](./screenshots/file01-network-interfaces.png)
+
+### Routing Table
+
+![Routing Table](./screenshots/file01-routing-table.png)
+
+---
+
+## Helpdesk and IT Operations
+
+### Helpdesk Support
+
+![Helpdesk Support](./screenshots/helpdesk-support.png)
