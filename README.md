@@ -1,73 +1,83 @@
 # Popfiz Enterprise Linux Operations
 
+![Azure](https://img.shields.io/badge/Microsoft%20Azure-Infrastructure-blue)
+![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange)
+![Security](https://img.shields.io/badge/Security-UFW%20%7C%20NSG-red)
+![Monitoring](https://img.shields.io/badge/Monitoring-System%20Performance-green)
+![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
+
 ## Project Overview
 
-This project demonstrates hands-on enterprise Linux systems administration and IT operations using Microsoft Azure-hosted Ubuntu Linux servers.
+The **Popfiz Enterprise Linux Operations** project is a hands-on systems administration and IT operations environment built on Microsoft Azure.
 
-The environment was designed to simulate a production-style IT infrastructure where a Systems Administrator is responsible for server administration, security, user access, storage, service management, monitoring, troubleshooting, and incident response.
+The project simulates the responsibilities of an enterprise Systems Administrator supporting application servers, file services, management infrastructure, network security, storage, users, services, and system performance.
 
-The project follows a practical operational lifecycle:
+The environment was designed around a practical operational lifecycle:
 
-**Configure → Secure → Monitor → Troubleshoot → Remediate → Validate → Document**
+> **Configure → Secure → Monitor → Troubleshoot → Remediate → Validate → Document**
+
+The project demonstrates not only how systems are configured, but also how an administrator investigates problems, identifies root causes, applies controlled remediation, and validates system recovery.
 
 ---
 
-# Business Scenario
+# Infrastructure Architecture
 
-Popfiz requires a secure and maintainable Linux infrastructure to support application services, file storage, administrative operations, and internal users.
+The environment contains three Ubuntu Linux servers with defined operational responsibilities.
 
-Three Ubuntu Linux servers were deployed in Microsoft Azure, with each server assigned a specific operational role.
-
-| Server | Role | Responsibility |
+| Server | Role | Primary Responsibilities |
 |---|---|---|
-| MGMT01 | Management Server | Administrative and management operations |
-| APP01 | Application Server | Apache web application hosting |
-| FILE01 | File Server | Enterprise file storage and access control |
+| **MGMT01** | Management Server | Administrative access and IT operations |
+| **APP01** | Application Server | Apache web service and application hosting |
+| **FILE01** | File Server | Enterprise storage, permissions, and file access |
 
----
+### Core Technologies
 
-# Infrastructure
-
-The environment includes:
-
-- Microsoft Azure Virtual Machines
+- Microsoft Azure
+- Azure Virtual Machines
 - Azure Virtual Network
 - Azure Network Security Groups
 - Azure Managed Disks
 - Ubuntu Linux
 - Apache HTTP Server
 - OpenSSH
-- UFW Firewall
+- UFW
+- systemd
 - Linux users and groups
 - Linux filesystem permissions
-- systemd service management
-- Linux monitoring and troubleshooting utilities
+- `fdisk`
+- `findmnt`
+- `top`
+- `ps`
+- `uptime`
+- `free`
+- `df`
+- `iostat`
+- `ss`
+- `ip`
+- `curl`
 
 ---
 
 # Project Objectives
 
-The project was designed to demonstrate practical experience with:
+The project was designed to demonstrate practical ability in:
 
-- Linux system administration
+- Enterprise Linux administration
 - Server configuration and maintenance
 - User and group management
 - File permissions and access control
 - SSH administration
-- Network security
-- Azure Network Security Groups
-- Linux firewall configuration
-- Apache web server management
+- Firewall configuration
+- Azure network security
+- Apache service management
 - Storage administration
 - Persistent filesystem configuration
 - System monitoring
-- CPU troubleshooting
-- Disk I/O monitoring
-- Network diagnostics
-- Service troubleshooting
+- Performance troubleshooting
+- Network troubleshooting
 - Root-cause analysis
 - Incident response
-- Technical documentation
+- Technical validation and documentation
 
 ---
 
@@ -75,77 +85,49 @@ The project was designed to demonstrate practical experience with:
 
 ## Objective
 
-Establish the Linux infrastructure and verify the configuration and connectivity of each server.
+Establish the Linux server environment and verify that each server is correctly configured and reachable.
 
-## Tasks Performed
+### Tasks Completed
 
-- Provisioned Ubuntu Linux virtual machines in Azure
+- Provisioned Ubuntu Linux servers in Azure
 - Defined server roles
 - Verified hostnames
 - Verified operating system information
 - Verified network interfaces
 - Verified routing configuration
-- Verified administrative access
+- Established administrative connectivity
 
----
+## Server Identification
 
-## APP01 Server
+### APP01
 
-![APP01 Server](./screenshots/APP01.png)
+![APP01 Server](./screenshots/app01-server.png)
 
----
+### FILE01
 
-## FILE01 Server
+![FILE01 Server](./screenshots/file01-server.png)
 
-![FILE01 Server](./screenshots/FILE01.png)
+### MGMT01
 
----
+![MGMT01 Server](./screenshots/mgmt01-server.png)
 
-## MGMT01 Server
+## System Information
 
-![MGMT01 Server](./screenshots/MGMT01.png)
+### APP01
 
----
+![APP01 System Information](./screenshots/app01-system-info.png)
 
-## APP01 Operating System Information
+### FILE01
 
-![APP01 Operating System](./screenshots/APP01%20uname.png)
+![FILE01 System Information](./screenshots/file01-system-info.png)
 
----
+### MGMT01
 
-## FILE01 Operating System Information
+![MGMT01 System Information](./screenshots/mgmt01-system-info.png)
 
-![FILE01 Operating System](./screenshots/FILE01%20uname.png)
+### Hostname and System Information
 
----
-
-## MGMT01 Operating System Information
-
-![MGMT01 Operating System](./screenshots/MGMT01%20uname.png)
-
----
-
-## Hostname Verification
-
-The server hostname and operating system configuration were verified using `hostnamectl`.
-
-![Hostname Verification](./screenshots/hostnamectl.png)
-
----
-
-## Network Interface Verification
-
-Network interfaces and assigned IP addresses were inspected using `ip addr`.
-
-![Network Interfaces](./screenshots/ip%20addr.png)
-
----
-
-## Routing Verification
-
-The routing table was verified using `ip route`.
-
-![Routing Table](./screenshots/ip%20route.png)
+![Hostname System Information](./screenshots/hostname-system-info.png)
 
 ---
 
@@ -153,9 +135,9 @@ The routing table was verified using `ip route`.
 
 ## Objective
 
-Demonstrate the day-to-day Linux administration activities performed by a Systems Administrator.
+Demonstrate the day-to-day administrative tasks performed by a Linux Systems Administrator.
 
-## Tasks Performed
+### Tasks Completed
 
 - Created Linux user accounts
 - Created security groups
@@ -163,73 +145,43 @@ Demonstrate the day-to-day Linux administration activities performed by a System
 - Created departmental roles
 - Verified group membership
 - Managed SSH
-- Inspected system services
+- Inspected system services with `systemctl`
 - Verified administrative accounts
 - Checked system resources
 
----
+## User and Group Administration
 
-## User Account Administration
+### User Accounts
 
-Linux user accounts were created and verified on FILE01.
+![FILE01 User Accounts](./screenshots/file01-user-accounts.png)
 
-![FILE01 User Accounts](./screenshots/FILE01%20USER%20ACCOUNTS.png)
+### Group Membership
 
----
+![FILE01 Group Membership](./screenshots/file01-group-membership.png)
 
-## Group Administration
+### Departmental Roles
 
-Linux groups were created to support role-based access control.
+![Departmental Roles](./screenshots/departmental-roles-assigned.png)
 
-![FILE01 Group Check](./screenshots/FILE01%20GROUP%20CHECK.png)
+### Group Verification
 
----
+![Group Verification](./screenshots/file01-group-verification.png)
 
-## Departmental Role Assignment
+## Service Administration
 
-Departmental users and groups were configured according to their operational roles.
+SSH and system services were inspected using `systemctl` and related Linux administration commands.
 
-![Departmental Roles](./screenshots/creating%20department%20and%20assigning%20roles.png)
+### SSH Service
 
----
+![SSH Service](./screenshots/file01-ssh-service.png)
 
-## Group Membership Verification
+### System Services
 
-Group memberships were verified to ensure users had the appropriate access.
+![System Services](./screenshots/file01-system-services.png)
 
-![Group Verification](./screenshots/sysadmin%20verify%20groups.png)
+### Administrative Account
 
----
-
-## SSH Service Administration
-
-The SSH service was inspected as part of remote server administration.
-
-![SSH Service](./screenshots/sysadmin%20ssh%20service.png)
-
----
-
-## System Service Management
-
-Linux services were inspected using `systemctl`.
-
-![System Services](./screenshots/sysadmin%20systemctl%20list%20unit.png)
-
----
-
-## System Resource Validation
-
-System memory was checked during routine administration.
-
-![System Memory](./screenshots/sysadmin%20free-h.png)
-
----
-
-## Administrative Account
-
-The administrative account configuration was verified.
-
-![System Administrator](./screenshots/%5Bsysadmin%40FILE01.png)
+![Administrative Account](./screenshots/file01-sysadmin-account.png)
 
 ---
 
@@ -239,59 +191,48 @@ The administrative account configuration was verified.
 
 Implement role-based access to departmental data using Linux ownership, groups, and filesystem permissions.
 
-## Tasks Performed
+### Tasks Completed
 
 - Created departmental directories
-- Created departmental access groups
-- Assigned ownership
+- Created departmental roles
+- Assigned group ownership
 - Applied Linux permissions
 - Tested authorized access
 - Tested unauthorized access
 - Investigated permission failures
-- Used `namei` to troubleshoot directory permissions
+- Used `namei` to analyze directory permissions
 
----
+## Departmental File Structure
 
-## Departmental Folder Structure
+![Departmental Folders](./screenshots/departmental-folders-created.png)
 
-Departmental folders were created to organize enterprise data.
+## Role Assignment
 
-![Departmental Folders](./screenshots/creating%20departmental%20folders.png)
+![Departmental Roles](./screenshots/departmental-roles-assigned.png)
 
----
+## Permission Testing
 
-## Permission Analysis
+An unauthorized access attempt was deliberately tested to verify that the permission model was enforcing the intended restrictions.
 
-The `namei` command was used to inspect permissions across each directory in a file path.
+![Permission Denied](./screenshots/file-permission-denied.png)
 
-![namei Permission Analysis](./screenshots/namei.png)
+## Permission Troubleshooting
 
----
+`namei` was used to examine the permissions of each directory component in the path.
 
-## Unauthorized Access Test
-
-An unauthorized access attempt was performed to confirm that the configured permissions were enforcing the intended restrictions.
-
-![Permission Denied](./screenshots/permission%20denied.png)
-
----
+![namei Permission Analysis](./screenshots/namei-permission-analysis.png)
 
 ## Access Validation
 
-File access was tested to confirm the expected permissions for authorized users.
+![File Access Test](./screenshots/file-access-test.png)
 
-![Access Test](./screenshots/test%20access.png)
-
----
-
-## Security Principles Demonstrated
+### Security Principles Demonstrated
 
 - Least privilege
 - Role-based access control
 - Group-based permissions
 - Separation of departmental data
-- Controlled access
-- Permission validation
+- Access validation
 - Permission troubleshooting
 
 ---
@@ -300,34 +241,28 @@ File access was tested to confirm the expected permissions for authorized users.
 
 ## Objective
 
-Secure APP01, manage its services, and validate the application server.
+Secure the application server and manage the services required to provide application access.
 
-## Tasks Performed
+### Tasks Completed
 
-- Configured UFW firewall
-- Applied default deny inbound policy
-- Allowed required HTTP traffic
+- Configured UFW
+- Applied default inbound restrictions
+- Allowed required services
 - Managed SSH access
+- Configured HTTP access
 - Installed Apache
-- Started Apache
+- Enabled Apache
 - Verified Apache service status
-- Inspected system services
-- Tested the web application
+- Verified listening ports
+- Tested the application
 
----
+## UFW Firewall
 
-## 4.1 UFW Firewall Configuration
-
-UFW was configured to control inbound traffic to APP01.
-
-The server was configured with:
+The application server was configured with a restrictive inbound firewall policy.
 
 ```text
-Default incoming: DENY
-Default outgoing: ALLOW
+Default: deny incoming
+Default: allow outgoing
 
-Allowed services:
-
-SSH  - TCP/22
-HTTP - TCP/80
-
+HTTP: TCP/80
+SSH: TCP/22
